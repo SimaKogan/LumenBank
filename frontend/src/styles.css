@@ -16,7 +16,8 @@ button.ghost { background:transparent; border:1px solid var(--line); color:var(-
 button.danger { background:transparent; border:1px solid #f8717166; color:var(--out); margin-left:8px; }
 .auth { max-width:400px; margin:10vh auto 0; text-align:center; } .auth form { margin-top:22px; display:grid; gap:2px; text-align:left; } .auth button { margin-top:6px; }
 .fresh { margin-top:18px; } .pin { margin:12px 0 16px; font-size:20px; } .pin b { letter-spacing:6px; color:var(--b); }
-.grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; } .grid header, .wide { grid-column:1 / -1; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; } .grid header { grid-column:1 / -1; }
+.col { display:flex; flex-direction:column; gap:20px; min-width:0; }
 header { display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; }
 .row { display:flex; gap:10px; } .row input { margin-bottom:10px; }
 .card { aspect-ratio:1.7; border-radius:24px; padding:26px; display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden;
@@ -29,7 +30,7 @@ header { display:flex; justify-content:space-between; align-items:center; margin
 .card-number { font-family:ui-monospace,Menlo,monospace; font-size:21px; letter-spacing:2px; z-index:1; }
 .visa { font-weight:800; font-style:italic; font-size:20px; }
 .chart { width:100%; height:160px; display:block; }
-.tx { list-style:none; margin:0; padding:0; } .tx li { display:flex; align-items:center; gap:14px; padding:12px 0; border-bottom:1px solid var(--line); } .tx li:last-child { border:0; }
+.tx { list-style:none; margin:0; padding:0; max-height:380px; overflow-y:auto; } .tx li { display:flex; align-items:center; gap:14px; padding:12px 0; border-bottom:1px solid var(--line); } .tx li:last-child { border:0; }
 .tx li > div { flex:1; display:flex; flex-direction:column; } .tx small { color:var(--muted); margin-top:2px; }
 .dot { width:38px; height:38px; border-radius:12px; display:grid; place-items:center; font-weight:700; } .dot.in { background:#34d39922; color:var(--in); } .dot.out { background:#f8717122; color:var(--out); }
 strong.in { color:var(--in); } strong.out { color:var(--out); }

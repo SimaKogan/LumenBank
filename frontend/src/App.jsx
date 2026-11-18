@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { api, getToken, setToken, money, groups } from './api.js'
+import { api, getToken, setToken, money, groups, localTime } from './api.js'
 
 const LABELS = { deposit: 'Deposit', transfer_in: 'Received', transfer_out: 'Sent' }
 const sign = (k) => (k === 'transfer_out' ? -1 : 1)
@@ -104,11 +104,8 @@ function Dashboard({ onLogout, toast }) {
         <h1>Lumen<b>Bank</b></h1>
         <div><button className="ghost" onClick={onLogout}>Log out</button><button className="danger" onClick={close}>Close account</button></div>
       </header>
+      <div className="col">
       <BankCard me={me} />
-      <section className="glass">
-        <h3>Balance over time</h3>
-        <Chart history={me.history} />
-      </section>
       <section className="glass">
         <h3>Add income</h3>
         <form onSubmit={deposit} className="row">
@@ -124,19 +121,26 @@ function Dashboard({ onLogout, toast }) {
           </div>
         </form>
       </section>
-      <section className="glass wide">
+      </div>
+      <div className="col">
+      <section className="glass">
+        <h3>Balance over time</h3>
+        <Chart history={me.history} />
+      </section>
+      <section className="glass">
         <h3>Recent activity</h3>
         {me.history.length === 0 && <p className="muted">No operations yet.</p>}
         <ul className="tx">
           {me.history.map((t, i) => (
             <li key={i}>
               <span className={'dot ' + (sign(t.kind) > 0 ? 'in' : 'out')}>{sign(t.kind) > 0 ? '↓' : '↑'}</span>
-              <div><b>{LABELS[t.kind]}</b><small>{t.counterparty ? groups(t.counterparty) : 'Cash'} · {t.at}</small></div>
+              <div><b>{LABELS[t.kind]}</b><small>{t.counterparty ? groups(t.counterparty) : 'Cash'} · {localTime(t.at)}</small></div>
               <strong className={sign(t.kind) > 0 ? 'in' : 'out'}>{sign(t.kind) > 0 ? '+' : '−'}{money(t.amount)}</strong>
             </li>
           ))}
         </ul>
       </section>
+      </div>
     </div>
   )
 }

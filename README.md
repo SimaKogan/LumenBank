@@ -4,6 +4,12 @@ A full-stack banking demo: **Java 17** REST API (JDK `HttpServer` + **SQLite**) 
 
 > Educational project. Not a real bank — do not use it with real money or real card data.
 
+## Screenshots
+
+![Login](docs/login.png)
+
+![Dashboard](docs/dashboard.png)
+
 ## Features
 - Open an account: Luhn-valid 16-digit card number and a random 4-digit PIN (shown once)
 - PIN stored as a salted **PBKDF2-SHA256** hash, never in clear text

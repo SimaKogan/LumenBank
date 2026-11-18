@@ -16,3 +16,7 @@ export async function api(path, method = 'GET', body) {
 export const money = (cents) =>
   (cents / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' })
 export const groups = (n = '') => n.replace(/(\d{4})(?=\d)/g, '$1 ')
+
+// SQLite stores UTC as "YYYY-MM-DD HH:MM:SS"; show it in the viewer's local time.
+export const localTime = (s) =>
+  new Date(s.replace(' ', 'T') + 'Z').toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' })
