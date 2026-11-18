@@ -1,7 +1,7 @@
 :root { --bg:#0b0b17; --panel:rgba(255,255,255,.05); --line:rgba(255,255,255,.09); --txt:#ececf6; --muted:#8b8ba7; --a:#7c5cff; --b:#22d3ee; --in:#34d399; --out:#f87171; }
 * { box-sizing: border-box; }
 body { margin:0; min-height:100vh; color:var(--txt); font-family:Inter,system-ui,Segoe UI,sans-serif;
-  background: radial-gradient(900px 500px at 10% -10%, #2a1b6e55, transparent), radial-gradient(800px 500px at 100% 0, #0e7490455, transparent), var(--bg); }
+  background: radial-gradient(900px 500px at 10% -10%, #2a1b6e55, transparent), radial-gradient(800px 500px at 100% 0, #0e749055, transparent), var(--bg); }
 main { max-width:1040px; margin:0 auto; padding:32px 20px 80px; }
 h1 { margin:0; font-size:26px; letter-spacing:-.5px; } h1 b, .brand b { color:var(--b); }
 h3 { margin:18px 0 10px; font-size:15px; color:var(--muted); font-weight:600; } h3:first-child { margin-top:0; }
