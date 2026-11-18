@@ -52,6 +52,6 @@ Open the account in the console, then see it in the web UI (same `lumenbank.db`)
 | DELETE | `/api/account` | Bearer | – |
 
 ## Author
-Sima Kogan
+Sima Kogan · [github.com/SimaKogan](https://github.com/SimaKogan)
 
 Licensed under the MIT License.
