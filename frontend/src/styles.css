@@ -1,0 +1,38 @@
+:root { --bg:#0b0b17; --panel:rgba(255,255,255,.05); --line:rgba(255,255,255,.09); --txt:#ececf6; --muted:#8b8ba7; --a:#7c5cff; --b:#22d3ee; --in:#34d399; --out:#f87171; }
+* { box-sizing: border-box; }
+body { margin:0; min-height:100vh; color:var(--txt); font-family:Inter,system-ui,Segoe UI,sans-serif;
+  background: radial-gradient(900px 500px at 10% -10%, #2a1b6e55, transparent), radial-gradient(800px 500px at 100% 0, #0e7490455, transparent), var(--bg); }
+main { max-width:1040px; margin:0 auto; padding:32px 20px 80px; }
+h1 { margin:0; font-size:26px; letter-spacing:-.5px; } h1 b, .brand b { color:var(--b); }
+h3 { margin:18px 0 10px; font-size:15px; color:var(--muted); font-weight:600; } h3:first-child { margin-top:0; }
+.muted { color:var(--muted); } .center { text-align:center; }
+.glass { background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:22px; backdrop-filter: blur(14px); }
+input { width:100%; padding:13px 14px; margin-bottom:10px; border-radius:12px; border:1px solid var(--line); background:#0d0d1f; color:var(--txt); font-size:15px; outline:none; }
+input:focus { border-color:var(--a); box-shadow:0 0 0 3px #7c5cff33; }
+button { padding:13px 18px; border:0; border-radius:12px; cursor:pointer; font-weight:600; font-size:15px; color:#fff;
+  background:linear-gradient(135deg,var(--a),#5b8def); transition:transform .15s, filter .15s; }
+button:hover { transform:translateY(-1px); filter:brightness(1.1); }
+button.ghost { background:transparent; border:1px solid var(--line); color:var(--txt); }
+button.danger { background:transparent; border:1px solid #f8717166; color:var(--out); margin-left:8px; }
+.auth { max-width:400px; margin:10vh auto 0; text-align:center; } .auth form { margin-top:22px; display:grid; gap:2px; text-align:left; } .auth button { margin-top:6px; }
+.fresh { margin-top:18px; } .pin { margin:12px 0 16px; font-size:20px; } .pin b { letter-spacing:6px; color:var(--b); }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; } .grid header, .wide { grid-column:1 / -1; }
+header { display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; }
+.row { display:flex; gap:10px; } .row input { margin-bottom:10px; }
+.card { aspect-ratio:1.7; border-radius:24px; padding:26px; display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden;
+  background:linear-gradient(135deg,#5b3df5 0%,#7c5cff 40%,#22b8cf 100%); box-shadow:0 25px 60px -20px #7c5cffaa; }
+.card::after { content:''; position:absolute; width:320px; height:320px; right:-90px; top:-120px; border-radius:50%; background:rgba(255,255,255,.12); }
+.card-top, .card-bottom { display:flex; justify-content:space-between; align-items:center; z-index:1; font-size:13px; opacity:.95; }
+.brand { font-size:20px; font-weight:700; } .brand b { color:#fff; opacity:.8; }
+.chip { width:42px; height:30px; border-radius:7px; background:linear-gradient(135deg,#ffe29a,#d6a84a); }
+.card-balance small { opacity:.8; } .card-balance h2 { margin:2px 0 0; font-size:34px; z-index:1; }
+.card-number { font-family:ui-monospace,Menlo,monospace; font-size:21px; letter-spacing:2px; z-index:1; }
+.visa { font-weight:800; font-style:italic; font-size:20px; }
+.chart { width:100%; height:160px; display:block; }
+.tx { list-style:none; margin:0; padding:0; } .tx li { display:flex; align-items:center; gap:14px; padding:12px 0; border-bottom:1px solid var(--line); } .tx li:last-child { border:0; }
+.tx li > div { flex:1; display:flex; flex-direction:column; } .tx small { color:var(--muted); margin-top:2px; }
+.dot { width:38px; height:38px; border-radius:12px; display:grid; place-items:center; font-weight:700; } .dot.in { background:#34d39922; color:var(--in); } .dot.out { background:#f8717122; color:var(--out); }
+strong.in { color:var(--in); } strong.out { color:var(--out); }
+.toast { position:fixed; left:50%; bottom:28px; transform:translateX(-50%); padding:13px 22px; border-radius:14px; background:#16a34a; color:#fff; font-weight:600; box-shadow:0 10px 30px #0008; animation:up .25s ease; }
+.toast.err { background:#dc2626; } @keyframes up { from { opacity:0; transform:translate(-50%,12px); } }
+@media (max-width:760px) { .grid { grid-template-columns:1fr; } .card-number { font-size:17px; } }
